@@ -31,5 +31,25 @@ protected charactersFromApi: Characters[] = [
     family: '',
     image: '',
     imageUrl: ''
+  },
+    {
+    id: 1,
+    firstName: 'Mathieu',
+    lastName: 'TB',
+    fullName: 'Mathieu TB',
+    title: 'Roi',
+    family: '',
+    image: '',
+    imageUrl: ''
+  },
+    {
+    id: 1,
+    firstName: 'Mathieu',
+    lastName: 'TB',
+    fullName: 'Mathieu TB',
+    title: 'Roi',
+    family: '',
+    image: '',
+    imageUrl: ''
   }];
 }
