@@ -33,7 +33,7 @@ protected charactersFromApi: Characters[] = [
     imageUrl: ''
   },
     {
-    id: 1,
+    id: 2,
     firstName: 'Mathieu',
     lastName: 'TB',
     fullName: 'Mathieu TB',
@@ -43,7 +43,7 @@ protected charactersFromApi: Characters[] = [
     imageUrl: ''
   },
     {
-    id: 1,
+    id: 3,
     firstName: 'Mathieu',
     lastName: 'TB',
     fullName: 'Mathieu TB',
