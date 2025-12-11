@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {Characters} from '../../shared/models/characters.model';
 
 
@@ -9,47 +9,5 @@ import {Characters} from '../../shared/models/characters.model';
   styleUrl: './characters-list.scss',
 })
 export class CharactersList {
-  protected newCharacter: Characters = {
-    id: 1,
-    firstName: 'Mathieu',
-    lastName: 'TB',
-    fullName: 'Mathieu TB',
-    title: 'Roi',
-    family: '',
-    image: '',
-    imageUrl: ''
-  };
-
-
-protected charactersFromApi: Characters[] = [
-  {
-    id: 1,
-    firstName: 'Mathieu',
-    lastName: 'TB',
-    fullName: 'Mathieu TB',
-    title: 'Roi',
-    family: '',
-    image: '',
-    imageUrl: ''
-  },
-    {
-    id: 2,
-    firstName: 'Mathieu',
-    lastName: 'TB',
-    fullName: 'Mathieu TB',
-    title: 'Roi',
-    family: '',
-    image: '',
-    imageUrl: ''
-  },
-    {
-    id: 3,
-    firstName: 'Mathieu',
-    lastName: 'TB',
-    fullName: 'Mathieu TB',
-    title: 'Roi',
-    family: '',
-    image: '',
-    imageUrl: ''
-  }];
+  @Input() public charactersFromParent!: Characters[];
 }

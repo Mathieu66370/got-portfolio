@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+// Variables globales
+$primary-color: #d4af37;
+$dark-bg: #1a1a1a;
+$brown-dark: #2d1810;
+$gold-light: #ffd700;
+$text-color: #c0c0c0;
+
+// Styles globaux
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: $dark-bg;
+  color: $primary-color;
+}
+
+h1, h2 {
+  font-family: 'Cinzel', serif;
+  color: $primary-color;
+}
+
+p {
+  color: $text-color;
+  line-height: 1.8;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-family: 'Garamond', 'Georgia', serif;
+  text-decoration: none;
+}

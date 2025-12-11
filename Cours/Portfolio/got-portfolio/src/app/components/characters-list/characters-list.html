@@ -1,6 +1,15 @@
-{{newCharacter.id}}
-{{newCharacter.firstName}}
-{{newCharacter.lastName}}
-{{newCharacter.fullName}}
-{{newCharacter.title}}
-{{newCharacter.family}}
+<h2 class="section-title">Personnages</h2>
+<div class="characters-wrapper">
+    @for(character of charactersFromParent;track character.id) {
+        <div class="character-card">
+            <img [src]="character.imageUrl" [alt]="character.fullName">
+            <h1>{{character.fullName}}</h1>
+            <p>Prénom: {{character.firstName}}</p>
+            <p>Nom: {{character.lastName}}</p>
+            <p>{{character.title}}</p>
+            <strong>Famille: {{character.family}}</strong>
+        </div>
+    }  @empty{
+        <p>Il n'y a rien dans le tableau.</p>
+    }
+</div>

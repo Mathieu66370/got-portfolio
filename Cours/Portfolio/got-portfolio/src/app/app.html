@@ -1,3 +1,19 @@
-<app-characters-list/>
+<!-- app.html -->
+<div class="search-container">
+  <input 
+    type="text" 
+    class="search-input"
+    [(ngModel)]="searchText" 
+    (input)="filterResults()" 
+    placeholder="🔍 Rechercher un personnage ou un continent...">
+</div>
+
+@if (filteredCharacters.length > 0){
+  <app-characters-list [charactersFromParent]="filteredCharacters"/>
+}
+
+@if (filteredContinents.length > 0){
+  <app-continents-list [continentsFromParent]="filteredContinents"/>
+}
 
 <router-outlet />

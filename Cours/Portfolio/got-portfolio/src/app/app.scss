@@ -1,0 +1,36 @@
+@import '../styles.scss';
+
+.search-container {
+  padding: 40px;
+  background: linear-gradient(135deg, $dark-bg 0%, $brown-dark 50%, #4a2511 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid $primary-color;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 600px;
+  padding: 18px 25px;
+  font-size: 1.1rem;
+  border: 2px solid $primary-color;
+  border-radius: 8px;
+  background: rgba(26, 26, 26, 0.9);
+  color: $primary-color;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Cinzel', serif;
+  
+  &:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+    border-color: $gold-light;
+  }
+  
+  &::placeholder {
+    color: #8b7355;
+    font-style: italic;
+  }
+}
