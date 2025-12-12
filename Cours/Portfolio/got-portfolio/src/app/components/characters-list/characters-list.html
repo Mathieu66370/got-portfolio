@@ -1,15 +1,41 @@
-<h2 class="section-title">Personnages</h2>
-<div class="characters-wrapper">
-    @for(character of charactersFromParent;track character.id) {
-        <div class="character-card">
-            <img [src]="character.imageUrl" [alt]="character.fullName">
-            <h1>{{character.fullName}}</h1>
-            <p>Prénom: {{character.firstName}}</p>
-            <p>Nom: {{character.lastName}}</p>
-            <p>{{character.title}}</p>
-            <strong>Famille: {{character.family}}</strong>
+<section class="characters-section">
+  <div class="section-header">
+    <h2 class="section-title">Personnages</h2>
+    <div class="section-line"></div>
+  </div>
+  
+  <div class="characters-wrapper">
+    @for(character of charactersFromParent; track character.id) {
+      <div class="character-card">
+        <div class="card-inner">
+          <img [src]="character.imageUrl" [alt]="character.fullName" class="character-image">
+          
+          <div class="card-info">
+            <div class="info-header">
+              <h3 class="character-name">{{(character.fullName ?? '')}}</h3>
+              <span class="family-badge">{{character.family | familyEmoji}}</span>
+            </div>
+            
+            <p class="character-title">{{character.title}}</p>
+            
+            <div class="character-meta">
+              <span class="meta-item">{{character.firstName}}</span>
+              <span class="meta-separator">•</span>
+              <span class="meta-item">{{character.lastName}}</span>
+            </div>
+            
+            <div class="character-family">
+              <span class="family-label">Maison</span>
+              <span class="family-value">{{character.family}}</span>
+            </div>
+          </div>
         </div>
-    }  @empty{
-        <p>Il n'y a rien dans le tableau.</p>
+      </div>
+    } @empty {
+      <div class="empty-state">
+        <span class="empty-icon">🔍</span>
+        <p class="empty-text">Aucun personnage trouvé</p>
+      </div>
     }
-</div>
+  </div>
+</section>
