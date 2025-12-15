@@ -1,14 +1,17 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {Characters} from '../../shared/models/characters.model';
-import { FamilyEmojiPipe } from '../../pipes/family-emoji.pipe'; 
+import {Component, Input} from '@angular/core';
+import {Characters} from '../../shared/models/character.model';
+import {SlugifyPipe} from '../../shared/pipes/slugify-pipe';
+import {SuffixPipePipe} from '../../shared/pipes/suffix-pipe-pipe';
 
 @Component({
   selector: 'app-characters-list',
-  imports: [CommonModule, FamilyEmojiPipe], 
+  imports: [
+    SlugifyPipe,
+    SuffixPipePipe
+  ],
   templateUrl: './characters-list.html',
   styleUrl: './characters-list.scss',
 })
-export class CharactersList {
-  @Input() public charactersFromParent!: Characters[];
+export class CharactersList  {
+  @Input() charactersFromParent! : Characters[];
 }

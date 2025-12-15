@@ -1,0 +1,11 @@
+@for (city of citiesFromParent; track city.id) {
+  <div class="wrapper">
+    <div class="card">
+      <h2>{{ city.name }}</h2>
+      <p>{{ city.inhabitants }}</p>
+      <p>{{ city.typicalDish }}</p>
+      <p>{{ city.currency }}</p>
+      <p>{{ city.flag }}</p>
+    </div>
+  </div>
+}

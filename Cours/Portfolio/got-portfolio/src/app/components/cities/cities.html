@@ -1,0 +1,14 @@
+<div class="cities-container">
+  <h1>{{ currentTitle }}</h1>
+  
+  <!-- Filtres optionnels par pays (si tu veux les ajouter) -->
+  <!-- <div class="country-filters">
+    <button class="filter-chip active">All</button>
+    <button class="filter-chip">🇫🇷 France</button>
+    <button class="filter-chip">🇺🇸 USA</button>
+    <button class="filter-chip">🇩🇪 Germany</button>
+    <button class="filter-chip">🇪🇸 Spain</button>
+  </div> -->
+  
+  <app-cities-list [citiesFromParent]="cities"></app-cities-list>
+</div>

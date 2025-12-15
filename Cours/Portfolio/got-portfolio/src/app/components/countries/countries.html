@@ -1,0 +1,15 @@
+<div class="countries-container">
+  <!-- Afficher les chips UNIQUEMENT si on est sur /countries (pas sur /countries/cities) -->
+  @if (showCountryChips) {
+    <h1>Countries</h1>
+    
+    <div class="countries-chips">
+      <button class="country-chip">🇫🇷 France</button>
+      <button class="country-chip">🇺🇸 USA</button>
+      <button class="country-chip">🇩🇪 Germany</button>
+      <button class="country-chip">🇪🇸 Spain</button>
+    </div>
+  }
+  
+  <router-outlet></router-outlet>
+</div>

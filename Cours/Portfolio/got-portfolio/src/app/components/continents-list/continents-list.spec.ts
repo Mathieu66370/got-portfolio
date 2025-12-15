@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContinentList } from './continents-list';
+import { ContinentsList } from './continents-list';
 
-describe('CharactersList', () => {
-  let component: ContinentList;
-  let fixture: ComponentFixture<ContinentList>;
+describe('ContinentsList', () => {
+  let component: ContinentsList;
+  let fixture: ComponentFixture<ContinentsList>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContinentList]
+      imports: [ContinentsList]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ContinentList);
+    fixture = TestBed.createComponent(ContinentsList);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

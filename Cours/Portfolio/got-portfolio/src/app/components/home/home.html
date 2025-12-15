@@ -1,113 +1,17 @@
-<!-- Header moderne -->
-<header class="main-header">
-  <div class="header-content">
-    <h1 class="site-title">GAME OF THRONES</h1>
-    <div class="search-container">
-      <input 
-        type="text" 
-        class="search-input"
-        [(ngModel)]="searchText" 
-        (input)="filterResults()" 
-        placeholder="Rechercher un personnage ou un continent...">
+<header class="app-header">
+  <div class="app-header__inner">
+    <div class="app-header__search">
+      <span class="app-header__search-icon">🔍</span>
+      <input
+        #searchInput
+        class="app-header__search-input"
+        type="text"
+        placeholder="Chercher un personnage"
+        (input)="onSearch(searchInput.value)"
+      >
     </div>
-    <button class="header-settings-btn" (click)="togglePanel()" [class.active]="isPanelOpen">
-      <span class="settings-icon">⚙️</span>
-      <span class="settings-text">Exercices</span>
-    </button>
   </div>
 </header>
 
-<!-- Panel latéral pour les exercices ngClass -->
-<aside class="exercises-panel" [class.open]="isPanelOpen">
-  <div class="panel-header">
-    <h2 class="panel-title">Exercices NgClass</h2>
-    <button class="panel-close" (click)="togglePanel()">✕</button>
-  </div>
-  
-  <div class="panel-body">
-    <!-- Exercice 1 -->
-    <div class="exercise-item">
-      <h3>Toggle Selection</h3>
-      <button class="btn-exercise" (click)="toggleSelection()">
-        {{ isSelected ? '✓ Sélectionné' : '○ Sélectionner' }}
-      </button>
-      <div class="status-badge" [ngClass]="{'active': isSelected}">
-        {{ isSelected ? 'Actif' : 'Inactif' }}
-      </div>
-    </div>
-
-    <!-- Exercice 2 -->
-    <div class="exercise-item">
-      <h3>Styles Multiples</h3>
-      <div class="multi-controls">
-        <button class="btn-small" (click)="toggleHighlight()">
-          Highlight {{ isHighlighted ? '✓' : '' }}
-        </button>
-        <button class="btn-small" (click)="toggleBold()">
-          Bold {{ isBold ? '✓' : '' }}
-        </button>
-      </div>
-      <div class="preview-box" [ngClass]="{
-        'selected': isSelected,
-        'highlighted': isHighlighted,
-        'bold-text': isBold
-      }">
-        Aperçu des styles
-      </div>
-    </div>
-
-    <!-- Exercice 3 -->
-    <div class="exercise-item">
-      <h3>Mode Warning/Success</h3>
-      <button class="btn-exercise" (click)="toggleWarning()">
-        Basculer
-      </button>
-      <div class="status-badge" [ngClass]="isWarning ? 'warning' : 'success'">
-        {{ isWarning ? '⚠️ Warning' : '✅ Success' }}
-      </div>
-    </div>
-
-    <!-- Exercice 4 -->
-    <div class="exercise-item">
-      <h3>Premium (ET logique)</h3>
-      <div class="multi-controls">
-        <button class="btn-small" (click)="togglePremium()">
-          Premium {{ isPremium ? '✓' : '' }}
-        </button>
-        <button class="btn-small" (click)="toggleActive()">
-          Active {{ isActive ? '✓' : '' }}
-        </button>
-      </div>
-      <div class="preview-box" [ngClass]="{'premium': isPremium && isActive}">
-        {{ (isPremium && isActive) ? '🏆 Premium Actif' : 'Premium Inactif' }}
-      </div>
-    </div>
-
-    <!-- Exercice 5 -->
-    <div class="exercise-item">
-      <h3>Style Spécial</h3>
-      <button class="btn-exercise" (click)="toggleSpecial()">
-        Toggle Special
-      </button>
-      <div class="preview-box" [ngClass]="{'special': isSpecial}">
-        {{ isSpecial ? '⭐ Spécial' : 'Normal' }}
-      </div>
-    </div>
-  </div>
-</aside>
-
-<!-- Overlay pour fermer le panel -->
-<div class="panel-overlay" [class.visible]="isPanelOpen" (click)="togglePanel()"></div>
-
-<!-- Contenu principal - CONTINENTS EN PREMIER -->
-<main class="main-content">
-  @if (filteredContinents.length > 0){
-    <app-continents-list [continentsFromParent]="filteredContinents"/>
-  }
-
-  @if (filteredCharacters.length > 0){
-    <app-characters-list [charactersFromParent]="filteredCharacters"/>
-  }
-</main>
-
-<router-outlet />
+<app-continents-list [continentsFromParent]="continentsToGiveToChild" />
+<app-characters-list [charactersFromParent]="filteredCharacters" />
