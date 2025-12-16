@@ -2,7 +2,7 @@ import {Component, inject, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Title} from '@angular/platform-browser';
 import {CitiesModel} from '../../shared/models/cities.model';
-import {CitiesList} from '../cities-list/cities-list';
+import {CitiesList} from '../../components/cities-list/cities-list';
 
 @Component({
   selector: 'app-cities',
@@ -33,5 +33,9 @@ export class Cities implements OnInit {
 
   private getTitle() {
     this.currentTitle = this.titleService.getTitle();
+  }
+
+  protected addCity(createdCity: CitiesModel) {
+    this.cities = [...this.cities, createdCity];
   }
 }

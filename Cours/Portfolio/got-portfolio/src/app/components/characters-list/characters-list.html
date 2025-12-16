@@ -2,12 +2,11 @@
   <header class="characters__header">
     <h1 class="characters__title">Characters</h1>
     <p class="characters__subtitle">
-      {{ charactersFromParent.length }}
-      result{{ charactersFromParent.length > 1 ? 's' : '' }}
+      {{ charactersFromParent.length ?? 0 }} result{{ (charactersFromParent?.length ?? 0) > 1 ? 's' : '' }}
     </p>
   </header>
 
-  @if (charactersFromParent.length > 0) {
+  @if ((charactersFromParent?.length ?? 0) > 0) {
     <div class="characters__grid">
       @for (character of charactersFromParent; track character.id) {
         <article [class]="character.family | slugify" class="character-card">
@@ -41,11 +40,8 @@
               <div class="character-card__meta">
                 <div class="character-card__meta-row">
                   <span class="character-card__meta-label">First name</span>
-                  <span class="character-card__meta-value">
-                    {{ character.firstName | slugify }}
-                  </span>
+                  <span class="character-card__meta-value">{{ character.firstName | slugify  }}</span>
                 </div>
-
                 <div class="character-card__meta-row">
                   <span class="character-card__meta-label">Last name</span>
                   <span class="character-card__meta-value">{{ character.lastName }}</span>
@@ -54,9 +50,7 @@
                 @if (character.fullName) {
                   <div class="character-card__meta-row">
                     <span class="character-card__meta-label">Full name</span>
-                    <span class="character-card__meta-value">
-                      {{ character.fullName | suffix: '⚔️' }}
-                    </span>
+                    <span class="character-card__meta-value">{{ character.fullName  | suffix: '⚔️' }}</span>
                   </div>
                 }
               </div>

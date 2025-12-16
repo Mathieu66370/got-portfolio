@@ -1,24 +1,19 @@
 // Variables
-$primary-color: #f97316;
-$dark-bg: #020617;
-$dark-bg-alt: #000;
-$card-bg: #111827;
-$text-primary: #f9fafb;
-$text-secondary: #e5e7eb;
-$text-tertiary: #9ca3af;
-$border-color: rgba(75, 85, 99, 0.9);
+$primary-color: #e50914;
+$background-dark: #141414;
+$background-darker: #0a0a0a;
+$card-background: #1a1a1a;
+$text-primary: #e5e5e5;
+$text-secondary: #999999;
+$border-color: #333333;
 
+// Styles globaux
 html, body {
   margin: 0;
   padding: 0;
   background: radial-gradient(circle at top left, #020617 0, #020617 40%, #000 100%);
   color: #f9fafb;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+  "Segoe UI", sans-serif;
   min-height: 100%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
